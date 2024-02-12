@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="center">
+    <form method="post" class="card">
+        {% csrf_token %}
+        <h2>Delete User</h2>
+        <p>Are you sure that you want to delete "{{ ad.title }}"?</p>
+        <p class="form-buttons">
+            <input type="submit" class="btn btn-danger" value="Delete">
+            <a href="{% url 'user-list' %}" class="btn btn-info">Cancel</a>
+        </p>
+    </form>
+</div>
+
+</body>
+</html>

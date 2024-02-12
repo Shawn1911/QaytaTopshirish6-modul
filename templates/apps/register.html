@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Registration Form</title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="{% static 'admin/css/style.css' %}">
+</head>
+<style>
+    
+</style>
+<body>
+<div style='position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);'>
+    <div style="margin: 20px 20px 20px 20px">
+        <input type="checkbox" id="check">
+        <div class="registration form">
+            <header>Register</header>
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Enter your name">
+                <input type="text" name="email" placeholder="Enter your email">
+                <input type="password" name="password" placeholder="Create a password">
+                <input type="password" name="confirm_password" placeholder="Confirm your password">
+                <input type="submit" class="button" value="Register">
+            </form>
+            <div class="signup">
+        <span class="signup">Already have an account?
+         <a href="{% url 'login' %}">
+            <h3>Login</h3>
+            </a>
+        </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
